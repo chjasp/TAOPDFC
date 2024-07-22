@@ -17,11 +17,12 @@ async def validate_pdf(pdf_file: Annotated[UploadFile, File()]):
         raise HTTPException(status_code=400, detail="Only PDF files are allowed")
     return pdf_file
 
-
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse(
         request=request, name="home.html")
+
+
 
 @app.post("/upload")
 async def upload_pdf(pdf_file: UploadFile = Depends(validate_pdf)):
