@@ -1,4 +1,6 @@
 fastapi
 google-cloud-storage
 python-dotenv
-pydantic-settings
+google-generativeai
+python-multipart
+PyPDF2
